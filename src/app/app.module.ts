@@ -17,11 +17,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { CartComponent } from './cart/cart.component';
+import { DataService } from './services/data.service';
 
 
 const appRoutes:Routes=[
-  {
+{
   path:'',component:ProductCardComponent
+},
+{
+  path:'product-card',component:ProductCardComponent
 },
 {
   path:'login',component:UserLoginComponent
@@ -55,7 +59,7 @@ const appRoutes:Routes=[
     MatIconModule,
     CommonModule
   ],
-  providers: [LoginServiceService,LoginGuard],
+  providers: [LoginServiceService,LoginGuard,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

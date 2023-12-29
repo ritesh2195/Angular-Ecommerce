@@ -1,17 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthSericeService } from './services/auth-serice.service';
 import { Router } from '@angular/router';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit,OnDestroy {
 
   title = 'angular-project';
 
-  constructor(private authService:AuthSericeService,private router:Router){}
+  cartCount:any;
+
+  constructor(private authService:AuthSericeService,private router:Router,
+    private dataService:DataService){}
+
+  ngOnDestroy(): void {
+  }
+
+  ngOnInit(): void {
+    
+    this.dataService.getData().subscribe((data) => {
+
+      this.cartCount = data;
+    });
+  }
 
   isUserLoginIn(){
 

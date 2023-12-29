@@ -58,3 +58,10 @@ a{
     cursor: pointer;
     font-size: 24px;
   }
+  
+  .cart-badge{
+
+    color: #fff;
+    background-color: black;
+    font-size: medium;
+  }

@@ -18,9 +18,12 @@
   </div>
 
   <!-- Cart Icon -->
-  <div class="cart-icon" (click)="onClickCart()" >
-    <mat-icon>shopping_cart</mat-icon>
-  </div>
+<!-- app.component.html or your component's HTML file -->
+<div class="cart-icon" (click)="onClickCart()" routerLink="/cart">
+  <mat-icon>shopping_cart</mat-icon>
+  <span class="cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
+</div>
+
 </div>
   <hr>
 <router-outlet></router-outlet>
