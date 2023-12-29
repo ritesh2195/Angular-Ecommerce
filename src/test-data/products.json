@@ -1,0 +1,32 @@
+[
+    {
+        "name":"Cabbage",
+        "price":"₹20",
+        "image":"https://www.villamart.in/files/Cabbage.jpg"
+    },
+    {
+        "name":"Brinjal",
+        "price":"₹25",
+        "image":"https://www.choosemycart.com/wp-content/uploads/2021/06/Brinjal1.jpg"
+    },
+    {
+        "name":"Potato",
+        "price":"₹15",
+        "image":"https://cdn.britannica.com/89/170689-131-D20F8F0A/Potatoes.jpg"
+    },
+    {
+        "name":"Onion",
+        "price":"₹10",
+        "image":"https://www.bigbasket.com/media/uploads/p/xxl/10000148-2_2-fresho-onion.jpg"
+    },
+    {
+        "name":"Lemon",
+        "price":"₹10",
+        "image":"https://gourmetgarden.in/cdn/shop/products/lemon_a43bdb45-b24f-4738-954e-0b03ef23af94_grande.jpg?v=1652424811"
+    },
+    {
+        "name":"Green Chilli",
+        "price":"₹10",
+        "image":"https://seed2plant.in/cdn/shop/products/biggreenchilliseeds.jpg?v=1606738066"
+    }
+]
