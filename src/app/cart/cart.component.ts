@@ -14,6 +14,8 @@ export class CartComponent implements OnInit {
 
   isProductRemoved:boolean=false
 
+  totalPrice!:number;
+
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
@@ -31,6 +33,8 @@ export class CartComponent implements OnInit {
 
       this.quantity = data[0].count
 
+      this.totalPrice = this.getTotalPrice()
+
     });
   }
 
@@ -39,5 +43,17 @@ export class CartComponent implements OnInit {
     this.isProductRemoved=true
 
     this.dataService.sendData(0)
+  }
+
+  getTotalPrice(){
+
+    let sum:number = 0
+    
+    for(let i=0;i<this.productsDetails.length;i++){
+
+      sum = sum+Number(this.productsDetails[i].price.substring(1))
+    }
+
+    return sum;
   }
 }

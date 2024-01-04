@@ -38,7 +38,7 @@ export class UserLoginComponent implements OnInit {
 
       this.authService.isUserLoggedIn=false;
 
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/product-card'])
     }
 
     else{
