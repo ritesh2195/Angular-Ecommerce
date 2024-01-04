@@ -14,6 +14,8 @@ export class ProductCardComponent implements OnInit {
 
   cartProductCounts:number = 0
 
+  productDetails: [{ name: string, price: string, count: number, image: string }] = [ { name: '', price: '', count: 0, image: '' } ];
+
   constructor(private productService:ProductsService,private dataService:DataService) { }
 
   ngOnInit(): void {
@@ -23,11 +25,13 @@ export class ProductCardComponent implements OnInit {
 
   clickAddToCart(product:any){
 
-    this.cartProductCounts++
+    this.dataService.sendData(++this.dataService.cartProductCounts);
 
-    this.dataService.sendData(this.cartProductCounts);
+    this.cartProductCounts = this.dataService.cartProductCounts
 
-    this.dataService.sendProductDetails({
+    console.log(this.cartProductCounts )
+
+    this.productDetails.push({
       name:product.name,
       price:product.price,
       count:this.cartProductCounts,
@@ -35,10 +39,7 @@ export class ProductCardComponent implements OnInit {
       
     })
 
-      // this.dataService.getProductDetails().subscribe(data=>{
-
-      //   console.log(data)
-      // })
+    this.dataService.sendProductDetails(this.productDetails)
   }
 
 }

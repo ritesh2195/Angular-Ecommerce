@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class CartComponent implements OnInit {
 
-  productDetails!: { name: string; price: string; count:number,image:string };
+  productsDetails!: [{ name: string; price: string; count:number,image:string }];
 
   quantity!:number
 
@@ -22,11 +22,14 @@ export class CartComponent implements OnInit {
 
     this.dataService.getProductDetails().subscribe((data) => {
       
-      this.productDetails = data;
+      this.productsDetails = data;
 
-      this.quantity = data.count
+      if(data[0].name===''){
 
-      console.log(data)
+        data.shift()
+      }
+
+      this.quantity = data[0].count
 
     });
   }

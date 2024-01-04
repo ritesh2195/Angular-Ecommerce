@@ -6,14 +6,16 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class DataService {
 
-  private dataSubject = new Subject<any>()
+  cartProductCounts:number = 0
 
-  private productDetails = new BehaviorSubject<{
+  private dataSubject = new BehaviorSubject<any>(0)
+
+  private productDetails = new BehaviorSubject<[{
     name:string,
     price:string,
     count:number,
     image:string
-  }>({name:'',price:'',count:0,image:''})
+  }]>([{name:'',price:'',count:0,image:''}])
 
   constructor() { }
 
@@ -27,7 +29,7 @@ export class DataService {
     return this.dataSubject.asObservable();
   }
 
-  sendProductDetails(data:{name:string,price:string,count:number,image:string}){
+  sendProductDetails(data:[{name:string,price:string,count:number,image:string}]){
 
     this.productDetails.next(data)
   }
