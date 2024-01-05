@@ -18,25 +18,7 @@ import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { CartComponent } from './cart/cart.component';
 import { DataService } from './services/data.service';
-
-
-const appRoutes:Routes=[
-{
-  path:'',component:ProductCardComponent
-},
-{
-  path:'product-card',component:ProductCardComponent
-},
-{
-  path:'login',component:UserLoginComponent
-},
-{
-  path:'cart',component:CartComponent
-},
-{
-  path:'**',redirectTo:'/cart'
-}
-]
+import { AppRouterModule } from './app-router/app-router.module';
 
 @NgModule({
   declarations: [
@@ -51,13 +33,13 @@ const appRoutes:Routes=[
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    AppRouterModule
   ],
   providers: [LoginServiceService,LoginGuard,DataService],
   bootstrap: [AppComponent]
