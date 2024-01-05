@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { UserLoginComponent } from '../user-login/user-login.component';
 import { CartComponent } from '../cart/cart.component';
-import { ForgetPasswordComponent } from '../user-login/forget-password/forget-password.component';
 
 
 const appRoutes:Routes=[
@@ -15,12 +14,7 @@ const appRoutes:Routes=[
   path:'product-card',component:ProductCardComponent
 },
 {
-  path:'login',component:UserLoginComponent,children:[
-
-    {
-      path:'forget-password',component:ForgetPasswordComponent
-    }
-  ]
+  path:'login',component:UserLoginComponent
 },
 {
   path:'cart',component:CartComponent

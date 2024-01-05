@@ -8,7 +8,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginServiceService } from './services/login-service.service';
 import { LoginGuard } from './guards/login.guard';
-import { ForgetPasswordComponent } from './user-login/forget-password/forget-password.component';
 import { ToasterComponent } from './toaster/toaster.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -24,7 +23,6 @@ import { AppRouterModule } from './app-router/app-router.module';
   declarations: [
     AppComponent,
     UserLoginComponent,
-    ForgetPasswordComponent,
     ToasterComponent,
     ProductCardComponent,
     CartComponent,

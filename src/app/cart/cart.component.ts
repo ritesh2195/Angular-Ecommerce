@@ -12,8 +12,6 @@ export class CartComponent implements OnInit {
 
   quantity!:number
 
-  isProductRemoved:boolean=false
-
   totalPrice!:number;
 
   constructor(private dataService:DataService) { }
@@ -40,9 +38,9 @@ export class CartComponent implements OnInit {
 
   onClickRemoval(){
 
-    this.isProductRemoved=true
+    this.productsDetails.pop()
 
-    this.dataService.sendData(0)
+    this.dataService.sendData(--this.dataService.cartProductCounts)
   }
 
   getTotalPrice(){

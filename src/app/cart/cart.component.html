@@ -1,4 +1,4 @@
-<div class="cart-container" *ngIf="!isProductRemoved">
+<div class="cart-container" *ngIf="productsDetails.length">
     <h2>Your Shopping Cart</h2>
   
     <!-- Example cart items -->
@@ -22,4 +22,4 @@
       <button>Place Order</button>
     </div>
   </div>
-  <h2 *ngIf="isProductRemoved">Your Cart is empty</h2>
+  <h2 *ngIf="productsDetails.length<1">Your Cart is empty</h2>
