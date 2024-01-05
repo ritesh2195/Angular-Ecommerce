@@ -2,7 +2,7 @@
     <h2>Your Shopping Cart</h2>
   
     <!-- Example cart items -->
-    <div class="cart-item" *ngFor="let productDetails of productsDetails">
+    <div class="cart-item" *ngFor="let productDetails of productsDetails; let i=index">
       <img class="product-image" [src]="productDetails.image" alt="Product Image">
       <div class="product-details">
         <div class="product-title">{{productDetails.name}}</div>
@@ -10,10 +10,10 @@
         <!-- Add more details if needed -->
         <div class="quantity-container">
           <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" [(ngModel)]="quantity" min="1">
+          <input type="number" id="quantity" [(ngModel)]="productsDetails[i].count" min="1">
         </div>
       </div>
-      <div class="remove-button" (click)="onClickRemoval()">Remove</div>
+      <div class="remove-button" (click)="onClickRemoval(i)">Remove</div>
     </div>
   
     <!-- Display total, checkout button, etc. -->

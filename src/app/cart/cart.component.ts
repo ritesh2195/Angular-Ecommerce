@@ -18,8 +18,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('Hi')
-
     this.dataService.getProductDetails().subscribe((data) => {
       
       this.productsDetails = data;
@@ -36,9 +34,9 @@ export class CartComponent implements OnInit {
     });
   }
 
-  onClickRemoval(){
+  onClickRemoval(i:number){
 
-    this.productsDetails.pop()
+    this.productsDetails.splice(i,1)
 
     this.dataService.sendData(--this.dataService.cartProductCounts)
   }
@@ -49,7 +47,7 @@ export class CartComponent implements OnInit {
     
     for(let i=0;i<this.productsDetails.length;i++){
 
-      sum = sum+Number(this.productsDetails[i].price.substring(1))
+      sum = sum+Number(this.productsDetails[i].price.substring(1))*this.productsDetails[i].count
     }
 
     return sum;

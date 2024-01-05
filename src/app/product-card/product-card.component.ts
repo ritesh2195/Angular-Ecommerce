@@ -25,21 +25,47 @@ export class ProductCardComponent implements OnInit {
 
   clickAddToCart(product:any){
 
+    let count = 0
+
     this.dataService.sendData(++this.dataService.cartProductCounts);
 
     this.cartProductCounts = this.dataService.cartProductCounts
 
-    console.log(this.cartProductCounts )
+    if(this.isContainsProduct(product)){
 
-    this.productDetails.push({
-      name:product.name,
-      price:product.price,
-      count:this.cartProductCounts,
-      image:product.image
+      this.productDetails.push({
+        name:product.name,
+        price:product.price,
+        count:++count,
+        image:product.image
+        
+      })
+    }
+
+    // this.productDetails.push({
+    //   name:product.name,
+    //   price:product.price,
+    //   count:this.cartProductCounts,
+    //   image:product.image
       
-    })
+    // })
 
     this.dataService.sendProductDetails(this.productDetails)
   }
+
+  isContainsProduct(fr:{ name: string, price: string, count: number, image: string }){
+
+    for(let i=0;i<this.productDetails.length;i++){
+
+        if(fr.name===this.productDetails[i].name){
+
+            this.productDetails[i].count++
+    
+            return false
+        }
+    }
+
+    return true
+}
 
 }
