@@ -19,7 +19,7 @@
     <!-- Display total, checkout button, etc. -->
     <div class="cart-summary">
       <div>Total price: ₹{{totalPrice}}</div>
-      <button (click)="onClickPlaceOrder()" routerLink="/address">Place Order</button>
+      <button (click)="onClickPlaceOrder()" routerLink="/address">CheckOut</button>
     </div>
   </div>
   <h2 *ngIf="productsDetails.length<1">Your cart is empty</h2>

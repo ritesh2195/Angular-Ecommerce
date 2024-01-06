@@ -1,6 +1,22 @@
 <div>
     <button class="address">Add Address</button>
-    <div *ngIf="false">
+
+    <div class="address-container">
+        <h4>Your Address</h4>
+        <hr>
+        <div class="address-block" *ngFor="let address of addressesDetails;let i=index">
+            <div class="radio-label">
+                <label>
+                <input type="radio" name="address" id="address1" value="Address 1" (click)="getAddress()" [checked]="i===0" #address>
+                <span class="a-text-bold">{{address.name}} </span>
+                <span>{{address.address}}</span>
+            </label>
+            </div>
+        </div>
+
+        <button class="submit-button">Place Order</button>
+    </div>
+    <!--div *ngIf="false">
         <form>
             <div class="mb-3">
                 <label for="username" class="form-label">Pin Code</label>
@@ -30,4 +46,4 @@
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
-</div>
+</div-->
