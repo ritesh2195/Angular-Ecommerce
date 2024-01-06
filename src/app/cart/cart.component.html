@@ -10,7 +10,7 @@
         <!-- Add more details if needed -->
         <div class="quantity-container">
           <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" [(ngModel)]="productsDetails[i].count" min="1">
+          <input type="number" id="quantity" [(ngModel)]="productsDetails[i].count" (ngModelChange)="onQuantityChange(i)" min="1">
         </div>
       </div>
       <div class="remove-button" (click)="onClickRemoval(i)">Remove</div>
@@ -19,7 +19,7 @@
     <!-- Display total, checkout button, etc. -->
     <div class="cart-summary">
       <div>Total price: ₹{{totalPrice}}</div>
-      <button>Place Order</button>
+      <button (click)="onClickPlaceOrder()" routerLink="/address">Place Order</button>
     </div>
   </div>
-  <h2 *ngIf="productsDetails.length<1">Your Cart is empty</h2>
+  <h2 *ngIf="productsDetails.length<1">Your cart is empty</h2>

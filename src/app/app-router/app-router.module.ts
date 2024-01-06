@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { UserLoginComponent } from '../user-login/user-login.component';
 import { CartComponent } from '../cart/cart.component';
+import { AddressComponent } from '../address/address.component';
+import { LoginGuard } from '../guards/login.guard';
 
 
 const appRoutes:Routes=[
@@ -18,6 +20,9 @@ const appRoutes:Routes=[
 },
 {
   path:'cart',component:CartComponent
+},
+{
+  path:'address',component:AddressComponent,canActivate:[LoginGuard]
 },
 {
   path:'**',redirectTo:'/product-card'

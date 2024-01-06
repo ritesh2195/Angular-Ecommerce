@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthSericeService } from './services/auth-serice.service';
 import { Router } from '@angular/router';
 import { DataService } from './services/data.service';
+import { LoginServiceService } from './services/login-service.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit,OnDestroy {
   cartCount:any;
 
   constructor(private authService:AuthSericeService,private router:Router,
-    private dataService:DataService){}
+    private dataService:DataService, private loginService:LoginServiceService){}
 
   ngOnDestroy(): void {
   }
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit,OnDestroy {
 
   isUserLoginIn(){
 
-    return this.authService.isUserLoggedIn
+    return this.loginService.isUserLoggedIn()
   }
 
   clickLogin(){
@@ -43,6 +44,8 @@ export class AppComponent implements OnInit,OnDestroy {
     this.router.navigate(['/dashboard'])
 
     this.authService.isUserLoggedIn=true
+
+    localStorage.removeItem('cookie')
   }
 
   onClickCart(){

@@ -18,6 +18,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { CartComponent } from './cart/cart.component';
 import { DataService } from './services/data.service';
 import { AppRouterModule } from './app-router/app-router.module';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AppRouterModule } from './app-router/app-router.module';
     ToasterComponent,
     ProductCardComponent,
     CartComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
 
   totalPrice!:number;
 
-  constructor(private dataService:DataService) { }
+  constructor(private dataService:DataService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -29,7 +30,7 @@ export class CartComponent implements OnInit {
 
       this.quantity = data[0].count
 
-      this.totalPrice = this.getTotalPrice()
+      this.calculateTotalPrice()
 
     });
   }
@@ -41,15 +42,22 @@ export class CartComponent implements OnInit {
     this.dataService.sendData(--this.dataService.cartProductCounts)
   }
 
-  getTotalPrice(){
+  onClickPlaceOrder(){
 
-    let sum:number = 0
-    
-    for(let i=0;i<this.productsDetails.length;i++){
+    this.router.navigate(['/address'])
+  }
 
-      sum = sum+Number(this.productsDetails[i].price.substring(1))*this.productsDetails[i].count
+  onQuantityChange(index: number) {
+    this.calculateTotalPrice();
+  }
+
+  calculateTotalPrice() {
+    let sum: number = 0;
+
+    for (let i = 0; i < this.productsDetails.length; i++) {
+      sum += Number(this.productsDetails[i].price.substring(1)) * this.productsDetails[i].count;
     }
 
-    return sum;
+    this.totalPrice = sum;
   }
 }
