@@ -2,16 +2,16 @@
 <div class="order-status">
   <div class="status ordered" ngClass="filledCircle">
     <div *ngIf="true" class="tick">&#10003;</div> <!-- Show tick if isOrdered is true -->
-    <label class="status-label">Ready to ship</label>
+    <label class="status-label">Ordered</label>
   </div>
 
   <div class="status ready-to-ship">
     <div *ngIf="false" class="tick">&#10003;</div> <!-- Show tick if isReadyToShip is true -->
-    <label class="status-label">Processing</label>
+    <label class="status-label mt-4">Processing</label>
   </div>
 
   <div class="status delivered">
     <div *ngIf="false" class="tick">&#10003;</div> <!-- Show tick if isDelivered is true -->
-    <label class="status-label">Delivered</label>
+    <label class="status-label mt-4">Delivered</label>
   </div>
 </div>

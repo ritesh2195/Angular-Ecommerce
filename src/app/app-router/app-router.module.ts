@@ -27,7 +27,7 @@ const appRoutes:Routes=[
   path:'address',component:AddressComponent,canActivate:[AddressGuard]
 },
 {
-  path:'order-confirmation',component:OrderConfirmationComponent,canActivate:[]
+  path:'order-confirmation',component:OrderConfirmationComponent,canActivate:[AddressGuard]
 },
 {
   path:'**',redirectTo:'/product-card'

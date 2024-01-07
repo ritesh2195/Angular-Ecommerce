@@ -22,4 +22,4 @@
       <button (click)="onClickCheckOut()" routerLink="/address">CheckOut</button>
     </div>
   </div>
-  <h2 *ngIf="productsDetails.length<1">Your cart is empty</h2>
+  <h2 class="empty-cart" *ngIf="productsDetails.length<1">Your cart is empty</h2>

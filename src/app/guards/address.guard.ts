@@ -13,15 +13,16 @@ export class AddressGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    this.dataService.isCheckOutButtonClicked.asObservable().subscribe(data=>data)
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+   
+      if(this.dataService.cartProductCounts>0){
 
-      return true
-    
+        return true
+      }
 
-    this.router.navigate(['/cart'])
+      this.router.navigate(['/cart'])
 
-    return false
+      return false
   }
   
 }

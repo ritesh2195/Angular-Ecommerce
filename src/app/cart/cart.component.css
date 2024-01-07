@@ -73,3 +73,9 @@ body {
     display: block;
     font-weight: bold;
   }
+
+  .empty-cart{
+
+    display: flex;
+    justify-content: center;
+  }

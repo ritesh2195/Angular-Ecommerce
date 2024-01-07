@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-address',
@@ -20,11 +21,16 @@ export class AddressComponent implements OnInit {
 
   selectedAddressIndex: number = 0;
 
-  constructor(private router:Router) {}
+  constructor(private router:Router,private dataService:DataService) {}
 
   ngOnInit(): void {}
 
   clickPlaceOrder() {
+
+    this.dataService.getProductDetails().subscribe(data=>{
+
+      console.log(data)
+    })
 
     this.router.navigate(['/order-confirmation'])
 
