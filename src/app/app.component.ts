@@ -52,4 +52,9 @@ export class AppComponent implements OnInit,OnDestroy {
 
     this.router.navigate(['/cart'])
   }
+
+  onClickLogo(){
+
+    this.router.navigate(['/product-card'])
+  }
 }

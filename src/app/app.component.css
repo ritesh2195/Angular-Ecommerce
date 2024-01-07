@@ -65,3 +65,23 @@ a{
     background-color: black;
     font-size: medium;
   }
+
+/* Add your own styling here */
+.logo {
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background-color change */
+
+  /* Optional styling to make it visually distinct */
+  padding: 5px;
+  border-radius: 5px;
+  width: auto;
+}
+
+.logo img {
+  width: 50%; /* Reduce the width by 50% */
+  height: 50%; /* Reduce the height by 50% */
+  object-fit: contain; /* Maintain aspect ratio while resizing */
+  border-radius: 10px;
+}
+
+
