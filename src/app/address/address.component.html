@@ -4,17 +4,20 @@
     <div class="address-container">
         <h4>Your Address</h4>
         <hr>
-        <div class="address-block" *ngFor="let address of addressesDetails;let i=index">
+        <div class="address-block" [ngClass]="{'selectedAddress':selectedAddressIndex===i}" *ngFor="let address of addressesDetails;let i=index">
             <div class="radio-label">
                 <label>
-                <input type="radio" name="address" id="address1" value="Address 1" (click)="getAddress()" [checked]="i===0" #address>
-                <span class="a-text-bold">{{address.name}} </span>
-                <span>{{address.address}}</span>
-            </label>
+                    <input type="radio" name="address" [id]="'address' + i" [value]="i"
+                        [(ngModel)]="selectedAddressIndex">
+                    <span>
+                        <span class="a-text-bold">{{address.name}} </span>
+                        <span>{{address.address}}</span>
+                    </span>
+                </label>
             </div>
         </div>
 
-        <button class="submit-button">Place Order</button>
+        <button class="submit-button" (click)="clickPlaceOrder()">Place Order</button>
     </div>
     <!--div *ngIf="false">
         <form>

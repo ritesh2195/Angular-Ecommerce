@@ -34,6 +34,10 @@
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
+  }
+
+  .selectedAddress{
+
     background-color: #FCF5EE;
   }
 

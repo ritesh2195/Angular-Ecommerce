@@ -18,16 +18,20 @@ export class AddressComponent implements OnInit {
     }
   ]
 
-  @ViewChild('address')addressDetails!:ElementRef
+  selectedAddressIndex:number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  getAddress(){
+  clickPlaceOrder() {
 
-    console.log(this.addressDetails.nativeElement.value)
+    console.log(this.selectedAddressIndex)
+    
+      const selectedAddress = this.addressesDetails[this.selectedAddressIndex];
+      console.log('Selected Address:', selectedAddress.name, selectedAddress.address);
+    
   }
 
 }
