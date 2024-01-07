@@ -1,0 +1,17 @@
+<h4>🎉 Your Order is placed successfully</h4>
+<div class="order-status">
+  <div class="status ordered" ngClass="filledCircle">
+    <div *ngIf="true" class="tick">&#10003;</div> <!-- Show tick if isOrdered is true -->
+    <label class="status-label">Ready to ship</label>
+  </div>
+
+  <div class="status ready-to-ship">
+    <div *ngIf="false" class="tick">&#10003;</div> <!-- Show tick if isReadyToShip is true -->
+    <label class="status-label">Processing</label>
+  </div>
+
+  <div class="status delivered">
+    <div *ngIf="false" class="tick">&#10003;</div> <!-- Show tick if isDelivered is true -->
+    <label class="status-label">Delivered</label>
+  </div>
+</div>

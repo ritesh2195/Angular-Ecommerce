@@ -28,5 +28,15 @@
         "name":"Green Chilli",
         "price":"₹10",
         "image":"https://seed2plant.in/cdn/shop/products/biggreenchilliseeds.jpg?v=1606738066"
+    },
+    {
+        "name":"Cucumber",
+        "price":"₹30",
+        "image":"https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71xkI-PIE5L._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "name":"Cauliflowser",
+        "price":"₹30",
+        "image":"https://www.jiomart.com/images/product/original/590000619/cauliflower-1-pc-approx-600-g-1000-g-product-images-o590000619-p590000619-0-202203170511.jpg?im=Resize=(1000,1000)"
     }
 ]

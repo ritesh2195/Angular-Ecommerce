@@ -42,7 +42,9 @@ export class CartComponent implements OnInit {
     this.dataService.sendData(--this.dataService.cartProductCounts)
   }
 
-  onClickPlaceOrder(){
+  onClickCheckOut(){
+
+    this.dataService.isCheckOutButtonClicked.next(true)
 
     this.router.navigate(['/address'])
   }

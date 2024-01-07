@@ -19,6 +19,8 @@ import { CartComponent } from './cart/cart.component';
 import { DataService } from './services/data.service';
 import { AppRouterModule } from './app-router/app-router.module';
 import { AddressComponent } from './address/address.component';
+import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { AddressGuard } from './guards/address.guard';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { AddressComponent } from './address/address.component';
     ProductCardComponent,
     CartComponent,
     AddressComponent,
+    OrderConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { AddressComponent } from './address/address.component';
     CommonModule,
     AppRouterModule
   ],
-  providers: [LoginServiceService,LoginGuard,DataService],
+  providers: [LoginServiceService,LoginGuard,DataService,AddressGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

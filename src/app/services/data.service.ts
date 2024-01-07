@@ -6,6 +6,8 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class DataService {
 
+  public isCheckOutButtonClicked = new BehaviorSubject<boolean>(false)
+
   cartProductCounts:number = 0
 
   private dataSubject = new BehaviorSubject<any>(0)

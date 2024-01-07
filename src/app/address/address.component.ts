@@ -1,37 +1,32 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-address',
   templateUrl: './address.component.html',
-  styleUrls: ['./address.component.css']
+  styleUrls: ['./address.component.css'],
 })
 export class AddressComponent implements OnInit {
-
   addressesDetails = [
     {
-      name:'Ritesh',
-      address:'123 Main Street, Cityville, Country'
+      name: 'Ritesh',
+      address: '123 Main Street, Cityville, Country',
     },
     {
-      name:'Pawan',
-      address:'456 Oak Avenue, Townsville, Country'
-    }
-  ]
+      name: 'Pawan',
+      address: '456 Oak Avenue, Townsville, Country',
+    },
+  ];
 
-  selectedAddressIndex:number = 0;
+  selectedAddressIndex: number = 0;
 
-  constructor() { }
+  constructor(private router:Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   clickPlaceOrder() {
 
-    console.log(this.selectedAddressIndex)
-    
-      const selectedAddress = this.addressesDetails[this.selectedAddressIndex];
-      console.log('Selected Address:', selectedAddress.name, selectedAddress.address);
-    
-  }
+    this.router.navigate(['/order-confirmation'])
 
+  }
 }

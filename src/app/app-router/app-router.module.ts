@@ -6,6 +6,8 @@ import { UserLoginComponent } from '../user-login/user-login.component';
 import { CartComponent } from '../cart/cart.component';
 import { AddressComponent } from '../address/address.component';
 import { LoginGuard } from '../guards/login.guard';
+import { OrderConfirmationComponent } from '../order-confirmation/order-confirmation.component';
+import { AddressGuard } from '../guards/address.guard';
 
 
 const appRoutes:Routes=[
@@ -22,7 +24,10 @@ const appRoutes:Routes=[
   path:'cart',component:CartComponent
 },
 {
-  path:'address',component:AddressComponent,canActivate:[LoginGuard]
+  path:'address',component:AddressComponent,canActivate:[AddressGuard]
+},
+{
+  path:'order-confirmation',component:OrderConfirmationComponent,canActivate:[]
 },
 {
   path:'**',redirectTo:'/product-card'
