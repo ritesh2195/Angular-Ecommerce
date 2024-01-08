@@ -1,60 +1,79 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { AuthSericeService } from './services/auth-serice.service';
 import { Router } from '@angular/router';
 import { DataService } from './services/data.service';
 import { LoginServiceService } from './services/login-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { OverlayContentComponent } from './overlay-content/overlay-content.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit,OnDestroy {
-
+export class AppComponent implements OnInit, OnDestroy {
   title = 'angular-project';
 
-  cartCount:any;
+  cartCount: any;
 
-  constructor(private authService:AuthSericeService,private router:Router,
-    private dataService:DataService, private loginService:LoginServiceService){}
+  constructor(
+    private authService: AuthSericeService,
+    private router: Router,
+    private dataService: DataService,
+    private loginService: LoginServiceService,
+    private dialog: MatDialog
+  ) {}
 
-  ngOnDestroy(): void {
-  }
+  ngOnDestroy(): void {}
 
   ngOnInit(): void {
-    
     this.dataService.getData().subscribe((data) => {
-
       this.cartCount = data;
     });
   }
 
-  isUserLoginIn(){
+  // @HostListener('mouseenter', ['$event']) onMouseEnter(event: MouseEvent) {
+  //   this.openDialog(event);
+  // }
 
-    return this.loginService.isUserLoggedIn()
+  // @HostListener('mouseleave', ['$event']) onMouseLeave(event: MouseEvent) {
+  //   this.dialog.closeAll(); // Close all open dialogs
+  // }
+
+  isUserLoginIn() {
+    return this.loginService.isUserLoggedIn();
   }
 
-  clickLogin(){
-
-    this.router.navigate(['/login'])
+  clickLogin() {
+    this.router.navigate(['/login']);
   }
 
-  onLogout(){
+  onLogout() {
+    this.router.navigate(['/dashboard']);
 
-    this.router.navigate(['/dashboard'])
+    this.authService.isUserLoggedIn = true;
 
-    this.authService.isUserLoggedIn=true
-
-    localStorage.removeItem('cookie')
+    localStorage.removeItem('cookie');
   }
 
-  onClickCart(){
-
-    this.router.navigate(['/cart'])
+  onClickCart() {
+    this.router.navigate(['/cart']);
   }
 
-  onClickLogo(){
+  onClickLogo() {
+    this.router.navigate(['/product-card']);
+  }
 
-    this.router.navigate(['/product-card'])
+  openDialog(event: MouseEvent): void {
+    const dialogRef = this.dialog.open(OverlayContentComponent, {
+      position: {
+        top: `${event.clientY}px`,
+        left: `${event.clientX}px`,
+      },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }

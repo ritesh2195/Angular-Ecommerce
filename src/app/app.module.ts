@@ -4,8 +4,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginServiceService } from './services/login-service.service';
 import { LoginGuard } from './guards/login.guard';
 import { ToasterComponent } from './toaster/toaster.component';
@@ -21,6 +19,9 @@ import { AppRouterModule } from './app-router/app-router.module';
 import { AddressComponent } from './address/address.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { AddressGuard } from './guards/address.guard';
+import { OverlayComponent } from './overlay/overlay.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { OverlayContentComponent } from './overlay-content/overlay-content.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,8 @@ import { AddressGuard } from './guards/address.guard';
     CartComponent,
     AddressComponent,
     OrderConfirmationComponent,
+    OverlayComponent,
+    OverlayContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { AddressGuard } from './guards/address.guard';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
+    MatDialogModule ,
     CommonModule,
     AppRouterModule
   ],
