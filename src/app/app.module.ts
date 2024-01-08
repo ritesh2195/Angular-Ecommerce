@@ -19,7 +19,6 @@ import { AppRouterModule } from './app-router/app-router.module';
 import { AddressComponent } from './address/address.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { AddressGuard } from './guards/address.guard';
-import { OverlayComponent } from './overlay/overlay.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { OverlayContentComponent } from './overlay-content/overlay-content.component';
 
@@ -32,7 +31,6 @@ import { OverlayContentComponent } from './overlay-content/overlay-content.compo
     CartComponent,
     AddressComponent,
     OrderConfirmationComponent,
-    OverlayComponent,
     OverlayContentComponent,
   ],
   imports: [
