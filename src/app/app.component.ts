@@ -81,4 +81,10 @@ export class AppComponent implements OnInit, OnDestroy {
       console.log('The dialog was closed');
     });
   }
+
+
+  clickProfile(){
+
+    this.router.navigate(['/my-profile'])
+  }
 }

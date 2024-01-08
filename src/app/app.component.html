@@ -19,7 +19,7 @@
       <!-- Dropdown Content -->
       <ul class="login-dropdown" *ngIf="isLoginHovered">
         <li>
-          <button class="boarderless">
+          <button class="boarderless" (click)="clickProfile()">
             <mat-icon>account_circle</mat-icon>
             My Profile
           </button>
@@ -36,6 +36,20 @@
       <i class="material-icons">person</i> <!-- Material Icons for the person icon -->
       Logout
       <mat-icon class="arrow-icon">arrow_drop_down</mat-icon>
+      <ul class="login-dropdown" *ngIf="isLoginHovered">
+        <li>
+          <button class="boarderless" (click)="clickProfile()">
+            <mat-icon>account_circle</mat-icon>
+            My Profile
+          </button>
+        </li>
+        <li>
+          <button class="boarderless">
+            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/orders-bfe8c4.svg" alt="">
+            Orders
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
 

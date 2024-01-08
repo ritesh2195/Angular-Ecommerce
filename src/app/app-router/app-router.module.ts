@@ -8,11 +8,15 @@ import { AddressComponent } from '../address/address.component';
 import { LoginGuard } from '../guards/login.guard';
 import { OrderConfirmationComponent } from '../order-confirmation/order-confirmation.component';
 import { AddressGuard } from '../guards/address.guard';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 
 
 const appRoutes:Routes=[
 {
   path:'',component:ProductCardComponent
+},
+{
+  path:'my-profile',component:UserProfileComponent,canActivate:[LoginGuard]
 },
 {
   path:'product-card',component:ProductCardComponent
