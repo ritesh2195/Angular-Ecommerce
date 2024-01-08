@@ -23,6 +23,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
   }
 
   .search-bar {
@@ -83,5 +84,53 @@ a{
   object-fit: contain; /* Maintain aspect ratio while resizing */
   border-radius: 10px;
 }
+
+.drop-down{
+
+  background-color: white;
+}
+
+.boarderless{
+
+  border: none;
+  background-color: transparent;
+}
+
+.borderless {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  padding: 10px; /* Adjust the padding as needed */
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.borderless mat-icon {
+  margin-right: 8px; /* Adjust the margin as needed */
+}
+
+/* Add this style for the dropdown */
+.login-button {
+  position: relative;
+}
+
+.login-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #fff; /* Set the background color as needed */
+  border: 1px solid #ccc; /* Set the border as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow */
+  z-index: 1;
+}
+
+.login-button:hover .login-dropdown {
+  display: block;
+}
+
 
 

@@ -16,6 +16,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   cartCount: any;
 
+  isLoginHovered:boolean = false
+
   constructor(
     private authService: AuthSericeService,
     private router: Router,
@@ -32,19 +34,22 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  // @HostListener('mouseenter', ['$event']) onMouseEnter(event: MouseEvent) {
-  //   this.openDialog(event);
-  // }
+  onMouseHover(){
 
-  // @HostListener('mouseleave', ['$event']) onMouseLeave(event: MouseEvent) {
-  //   this.dialog.closeAll(); // Close all open dialogs
-  // }
+    this.isLoginHovered = true
+  }
+
+  onMouseLeave(){
+
+    this.isLoginHovered = false
+  }
 
   isUserLoginIn() {
     return this.loginService.isUserLoggedIn();
   }
 
   clickLogin() {
+    this.isLoginHovered = false
     this.router.navigate(['/login']);
   }
 

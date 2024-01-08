@@ -11,19 +11,35 @@
   </mat-form-field>
 
   <!-- Login Button -->
-  <div class="login-button" *ngIf="!isUserLoginIn()" (click)="clickLogin()">
-    <i class="material-icons">person</i> <!-- Material Icons for the person icon -->
-    Login
-    <mat-icon class="arrow-icon">arrow_drop_down</mat-icon>
-  </div>
-  <div class="login-button" *ngIf="isUserLoginIn()" (click)="onLogout()">
-    <i class="material-icons">person</i> <!-- Material Icons for the person icon -->
-    Logout
-    <mat-icon class="arrow-icon">arrow_drop_down</mat-icon>
+  <div class="login-button-container" (mouseenter)="onMouseHover()" (mouseleave)="onMouseLeave()">
+    <div class="login-button" *ngIf="!isUserLoginIn()" (click)="clickLogin()">
+      <i class="material-icons">person</i> <!-- Material Icons for the person icon -->
+      Login
+      <mat-icon class="arrow-icon">arrow_drop_down</mat-icon>
+      <!-- Dropdown Content -->
+      <ul class="login-dropdown" *ngIf="isLoginHovered">
+        <li>
+          <button class="boarderless">
+            <mat-icon>account_circle</mat-icon>
+            My Profile
+          </button>
+        </li>
+        <li>
+          <button class="boarderless">
+            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/orders-bfe8c4.svg" alt="">
+            Orders
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="login-button" *ngIf="isUserLoginIn()" (click)="onLogout()">
+      <i class="material-icons">person</i> <!-- Material Icons for the person icon -->
+      Logout
+      <mat-icon class="arrow-icon">arrow_drop_down</mat-icon>
+    </div>
   </div>
 
   <!-- Cart Icon -->
-  <!-- app.component.html or your component's HTML file -->
   <div class="cart-icon" (click)="onClickCart()" routerLink="/cart">
     <mat-icon>shopping_cart</mat-icon>
     <span class="cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
@@ -32,6 +48,7 @@
 </div>
 <hr>
 <router-outlet></router-outlet>
+
 <!--footer *ngIf="isFooterShow()" id="footer" class="mt-5">
   <div>
     <div>
@@ -42,9 +59,9 @@
     <div>
       <div class="footer-link">
         <a href="" class="mx-2">Contact Us</a>
-        <a href="" class="mx-2">Privacy Polict</a>
+        <a href="" class="mx-2">Privacy Policy</a>
         <a href="" class="mx-2">Term of Use</a>
       </div>
     </div>
   </div>
-</footer-->
+</footer -->
