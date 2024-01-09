@@ -18,9 +18,9 @@
       <mat-icon class="arrow-icon">arrow_drop_down</mat-icon>
       <!-- Dropdown Content -->
     </div>
-    <div class="login-button" *ngIf="isUserLoginIn()" (click)="onLogout()">
-      <i class="material-icons">person</i> <!-- Material Icons for the person icon -->
-      Logout
+    <div class="login-button" *ngIf="isUserLoginIn()">
+      <mat-icon>account_circle</mat-icon> <!-- Material Icons for the person icon -->
+      {{userName}}
       <mat-icon class="arrow-icon">arrow_drop_down</mat-icon>
     </div>
     <ul class="login-dropdown" *ngIf="isLoginHovered">
@@ -35,6 +35,11 @@
           <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/orders-bfe8c4.svg" alt="">
           Orders
         </button>
+      </li>
+      <li class="p-2" *ngIf="isUserLoginIn()" (click)="onLogout()">
+        <button class="boarderless">
+          <mat-icon>exit_to_app</mat-icon>
+          Logout</button>
       </li>
     </ul>
   </div>

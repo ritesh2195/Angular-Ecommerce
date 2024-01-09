@@ -18,6 +18,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   isLoginHovered:boolean = false
 
+  userName:string = 'Ritesh Mishra'
+
   constructor(
     private authService: AuthSericeService,
     private router: Router,
@@ -32,6 +34,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.dataService.getData().subscribe((data) => {
       this.cartCount = data;
     });
+
+    this.userName = this.getLoggedUserName()
   }
 
   onMouseHover(){
@@ -86,5 +90,10 @@ export class AppComponent implements OnInit, OnDestroy {
   clickProfile(){
 
     this.router.navigate(['/my-profile'])
+  }
+
+  getLoggedUserName(){
+
+    return this.loginService.getLoggedInUserInfo().name
   }
 }
