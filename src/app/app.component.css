@@ -114,6 +114,10 @@ a {
   display: block;
 }
 
+li:hover{
+  background-color: #d4cbcb;
+}
+
 .login-button-container {
   position: relative;
 }
@@ -127,6 +131,9 @@ a {
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1;
+  padding: 0;
+  width: 150px;
+  height: auto;
 }
 
 /* Add your own styling here */
