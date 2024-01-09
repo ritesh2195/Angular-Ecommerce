@@ -1,0 +1,18 @@
+[
+    {
+        "name":"Ritesh Ranjan Mishra",
+        "age":22,
+        "contact":1234567890,
+        "gender":"Male",
+        "email":"abc@gmail.com",
+        "dob":"11/05/1991"
+    },
+    {
+        "name":"Ravi Ranjan Mishra",
+        "age":29,
+        "contact":1234567890,
+        "gender":"Male",
+        "email":"xyz@gmail.com",
+        "dob":"15/03/1992"
+    }
+]
