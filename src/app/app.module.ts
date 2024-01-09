@@ -22,6 +22,7 @@ import { AddressGuard } from './guards/address.guard';
 import { MatDialogModule } from '@angular/material/dialog';
 import { OverlayContentComponent } from './overlay-content/overlay-content.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     OrderConfirmationComponent,
     OverlayContentComponent,
     UserProfileComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,

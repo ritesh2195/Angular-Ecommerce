@@ -9,6 +9,7 @@ import { LoginGuard } from '../guards/login.guard';
 import { OrderConfirmationComponent } from '../order-confirmation/order-confirmation.component';
 import { AddressGuard } from '../guards/address.guard';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { OrdersComponent } from '../orders/orders.component';
 
 
 const appRoutes:Routes=[
@@ -26,6 +27,9 @@ const appRoutes:Routes=[
 },
 {
   path:'cart',component:CartComponent
+},
+{
+  path:'orders',component:OrdersComponent,canActivate:[LoginGuard]
 },
 {
   path:'address',component:AddressComponent,canActivate:[AddressGuard]
