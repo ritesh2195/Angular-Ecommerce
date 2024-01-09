@@ -136,4 +136,17 @@ li:hover{
   height: auto;
 }
 
+.boarderless{
+  display: flex;
+  align-items: center;
+}
+
+mat-icon{
+  margin-right: 5px;
+}
+
+.boarderless img{
+  margin-right: 5px;
+}
+
 /* Add your own styling here */
