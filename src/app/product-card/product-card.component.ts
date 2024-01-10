@@ -6,40 +6,40 @@ import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css']
+  styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent implements OnInit {
+  products: any[] = [];
 
-  products:any[]=[]
+  cartProductCounts: number = 0;
 
-  cartProductCounts:number = 0
+  productDetails: [
+    { name: string; price: string; count: number; image: string }
+  ] = [{ name: '', price: '', count: 0, image: '' }];
 
-  productDetails: [{ name: string, price: string, count: number, image: string }] = [ { name: '', price: '', count: 0, image: '' } ];
-
-  constructor(private productService:ProductsService,private dataService:DataService) { }
+  constructor(
+    private productService: ProductsService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {
-    
-    this.products=this.productService.getAllProducts()
+    this.products = this.productService.getAllProducts();
   }
 
-  clickAddToCart(product:any){
-
-    let count = 0
+  clickAddToCart(product: any) {
+    let count = 0;
 
     this.dataService.sendData(++this.dataService.cartProductCounts);
 
-    this.cartProductCounts = this.dataService.cartProductCounts
+    this.cartProductCounts = this.dataService.cartProductCounts;
 
-    if(this.isContainsProduct(product)){
-
+    if (this.isContainsProduct(product)) {
       this.productDetails.push({
-        name:product.name,
-        price:product.price,
-        count:++count,
-        image:product.image
-        
-      })
+        name: product.name,
+        price: product.price,
+        count: ++count,
+        image: product.image,
+      });
     }
 
     // this.productDetails.push({
@@ -47,25 +47,26 @@ export class ProductCardComponent implements OnInit {
     //   price:product.price,
     //   count:this.cartProductCounts,
     //   image:product.image
-      
+
     // })
 
-    this.dataService.sendProductDetails(this.productDetails)
+    this.dataService.sendProductDetails(this.productDetails);
   }
 
-  isContainsProduct(fr:{ name: string, price: string, count: number, image: string }){
+  isContainsProduct(fr: {
+    name: string;
+    price: string;
+    count: number;
+    image: string;
+  }) {
+    for (let i = 0; i < this.productDetails.length; i++) {
+      if (fr.name === this.productDetails[i].name) {
+        this.productDetails[i].count++;
 
-    for(let i=0;i<this.productDetails.length;i++){
-
-        if(fr.name===this.productDetails[i].name){
-
-            this.productDetails[i].count++
-    
-            return false
-        }
+        return false;
+      }
     }
 
-    return true
-}
-
+    return true;
+  }
 }

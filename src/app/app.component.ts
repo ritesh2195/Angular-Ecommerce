@@ -3,8 +3,7 @@ import { AuthSericeService } from './services/auth-serice.service';
 import { Router } from '@angular/router';
 import { DataService } from './services/data.service';
 import { LoginServiceService } from './services/login-service.service';
-import { MatDialog } from '@angular/material/dialog';
-import { OverlayContentComponent } from './overlay-content/overlay-content.component';
+
 
 @Component({
   selector: 'app-root',
@@ -25,7 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private router: Router,
     private dataService: DataService,
     private loginService: LoginServiceService,
-    private dialog: MatDialog
   ) {}
 
   ngOnDestroy(): void {}
@@ -72,21 +70,6 @@ export class AppComponent implements OnInit, OnDestroy {
   onClickLogo() {
     this.router.navigate(['/product-card']);
   }
-
-  openDialog(event: MouseEvent): void {
-    const dialogRef = this.dialog.open(OverlayContentComponent, {
-      position: {
-        top: `${event.clientY}px`,
-        left: `${event.clientX}px`,
-      },
-    });
-  
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-
-
   clickProfile(){
 
     this.router.navigate(['/my-profile'])

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { OverlayContentComponent } from '../overlay-content/overlay-content.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AddressFields } from 'src/models/address';
+import { AddressService } from '../services/address.service';
 
 @Component({
   selector: 'app-manage-address',
@@ -7,9 +11,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageAddressComponent implements OnInit {
 
-  constructor() { }
+  addresses!:AddressFields[]
+
+  constructor(
+    private dialog:MatDialog,
+    private addressService:AddressService
+  ) { }
 
   ngOnInit(): void {
+
+    this.addressService.getAddress().subscribe(data=>{
+
+      this.addresses = data
+    })
   }
 
+  clickAddress(){
+
+  }
+
+  openDialog(event: MouseEvent): void {
+    const dialogRef = this.dialog.open(OverlayContentComponent, {
+      position: {
+        top: `${event.clientY}px`,
+        left: `${event.clientX}px`,
+      },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }

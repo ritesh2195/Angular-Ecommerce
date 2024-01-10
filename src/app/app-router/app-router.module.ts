@@ -10,6 +10,7 @@ import { OrderConfirmationComponent } from '../order-confirmation/order-confirma
 import { AddressGuard } from '../guards/address.guard';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { OrdersComponent } from '../orders/orders.component';
+import { ManageAddressComponent } from '../manage-address/manage-address.component';
 
 
 const appRoutes:Routes=[
@@ -33,6 +34,9 @@ const appRoutes:Routes=[
 },
 {
   path:'address',component:AddressComponent,canActivate:[AddressGuard]
+},
+{
+  path:'manage-address',component:ManageAddressComponent,canActivate:[LoginGuard]
 },
 {
   path:'order-confirmation',component:OrderConfirmationComponent,canActivate:[AddressGuard]

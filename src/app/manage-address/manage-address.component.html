@@ -1,1 +1,17 @@
-<p>manage-address works!</p>
+<div>
+    <button (click)="openDialog($event)" class="address">Add Address</button>
+</div>
+<div>
+<div class="address-box" *ngFor="let address of addresses">
+    <h2>Entered Address</h2>
+    <p>{{ address?.name }}</p>
+    <p>{{ address?.contact }}</p>
+    <p>{{ address?.pincode }}</p>
+    <p>{{ address?.locality }}</p>
+    <p>{{ address?.address }}</p>
+    <p>{{ address?.city }}</p>
+    <p>{{ address?.state }}</p>
+    <p>{{ address?.landmark }}</p>
+  </div>
+</div>
+  
