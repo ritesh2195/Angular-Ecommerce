@@ -23,6 +23,11 @@ export class ManageAddressComponent implements OnInit {
     this.addressService.getAddress().subscribe(data=>{
 
       this.addresses = data
+
+      if(data[0].name===''){
+
+        data.shift()
+      }
     })
   }
 

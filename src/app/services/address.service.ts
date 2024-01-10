@@ -20,10 +20,21 @@ export class AddressService {
 
   constructor() { }
 
-  setAddress(data:AddressFields[]){
+  setAddress(data: AddressFields | AddressFields[]) {
 
-    this.addressSubject.next(data)
+    // Get the current array of addresses
+    const currentAddresses = this.addressSubject.getValue();
+  
+    // Ensure data is an array
+    const dataArray = Array.isArray(data) ? data : [data];
+  
+    // Create a new array by merging the current and new data
+    const updatedAddresses = [...currentAddresses, ...dataArray];
+  
+    // Update the BehaviorSubject with the new array
+    this.addressSubject.next(updatedAddresses);
   }
+  
 
   getAddress(){
 

@@ -36,6 +36,8 @@ export class OverlayContentComponent implements OnInit {
 
     console.log(this.addressForm.value);
 
+    this.addressService.setAddress(this.addressForm.value)
+
     this.addressForm.reset();
   }
 }
