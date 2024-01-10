@@ -24,6 +24,7 @@ import { OverlayContentComponent } from './overlay-content/overlay-content.compo
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import { ManageAddressComponent } from './manage-address/manage-address.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     OverlayContentComponent,
     UserProfileComponent,
     OrdersComponent,
+    ManageAddressComponent,
   ],
   imports: [
     BrowserModule,

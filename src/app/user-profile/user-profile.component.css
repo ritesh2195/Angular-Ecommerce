@@ -1,6 +1,68 @@
-.profile-banner.d-flex.justify-content-center.align-items-center{
-    background-color: #f8f6f5;
-    display: flex;
-    justify-content: center;
-}
+/* Custom CSS for Vertical Bootstrap Navbar */
+.custom-container {
+    max-width: 200px; /* Set a maximum width for the container */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
 
+  .navbar {
+    flex-direction: column;
+    padding: 0; /* Remove default padding */
+  }
+
+  .navbar-toggler {
+    order: -1; /* Move the toggler to the top for better alignment */
+  }
+
+  .navbar-nav {
+    width: 100%; /* Set the width to fill the available space */
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%; /* Set the width of each item to 100% */
+    text-align: center; /* Center-align the text */
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem; /* Add padding to the links for better spacing */
+    width: 100%; /* Make the links take the full width of the item */
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+
+  /* Additional styling, you can customize as needed */
+  .navbar-light .navbar-brand {
+    color: #007bff; /* Change the brand color */
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    background-color: #007bff; /* Change the toggler icon color */
+  }
+
+  /* Additional CSS for the profile section */
+  .profile-banner {
+    background-color: #f8f9fa; /* Set background color */
+    height: 100vh; /* Adjust the height as needed */
+  }
+
+  .custom_profile_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .profile-detail {
+    text-align: left;
+  }
+  .bold-text{
+    font-weight: bold;
+  }
+  .col-2{
+
+    border-width: 3px;
+    border-color: black;
+  }
