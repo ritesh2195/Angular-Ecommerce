@@ -48,6 +48,6 @@ export class LoginServiceService {
 
     let usersInfo:any[] = JSON.parse(JSON.stringify(require("../../../src/test-data/users-info.json")))
 
-    return usersInfo.find((info)=>info.email===email)
+    return usersInfo.find((info)=>info.email===localStorage.getItem('userName'))
   }
 }

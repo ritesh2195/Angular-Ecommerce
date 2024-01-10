@@ -39,7 +39,9 @@ export class UserLoginComponent implements OnInit {
 
       this.authService.isUserLoggedIn = false;
 
-      this.loginService.setUserLoginSubject(this.userLoginForm.get('username')?.value)
+      //this.loginService.setUserLoginSubject(this.userLoginForm.get('username')?.value)
+
+      localStorage.setItem('userName',this.userLoginForm.get('username')?.value)
 
       this.router.navigate(['/product-card']);
     } else {
