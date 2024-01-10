@@ -24,10 +24,7 @@ export class ManageAddressComponent implements OnInit {
 
       this.addresses = data
 
-      if(data[0].name===''){
-
-        data.shift()
-      }
+      this.addresses = this.addresses.filter(addresse=>addresse.name!=='')
     })
   }
 

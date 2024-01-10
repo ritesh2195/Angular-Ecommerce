@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { ProductDetails } from 'src/models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,7 @@ export class DataService {
 
   private dataSubject = new BehaviorSubject<any>(0)
 
-  private productDetails = new BehaviorSubject<[{
-    name:string,
-    price:string,
-    count:number,
-    image:string
-  }]>([{name:'',price:'',count:0,image:''}])
+  private productDetails = new BehaviorSubject<[ProductDetails]>([{name:'',price:'',count:0,image:''}])
 
   constructor() { }
 
@@ -31,7 +27,7 @@ export class DataService {
     return this.dataSubject.asObservable();
   }
 
-  sendProductDetails(data:[{name:string,price:string,count:number,image:string}]){
+  sendProductDetails(data:[ProductDetails]){
 
     this.productDetails.next(data)
   }

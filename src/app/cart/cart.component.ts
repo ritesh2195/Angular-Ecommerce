@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Router } from '@angular/router';
+import { ProductDetails } from 'src/models/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  productsDetails!: [{ name: string; price: string; count:number,image:string }];
+  productsDetails!: [ProductDetails];
 
   quantity!:number
 
