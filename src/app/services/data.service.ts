@@ -13,7 +13,7 @@ export class DataService {
 
   private dataSubject = new BehaviorSubject<any>(0)
 
-  private productDetails = new BehaviorSubject<[ProductDetails]>([{name:'',price:'',count:0,image:''}])
+  private productDetails = new BehaviorSubject<Array<ProductDetails>>([{name:'',price:'',count:0,image:''}])
 
   constructor() { }
 
@@ -29,7 +29,13 @@ export class DataService {
 
   sendProductDetails(data:[ProductDetails]){
 
-    this.productDetails.next(data)
+    const currentProductDetails = this.productDetails.getValue();
+
+    let updatedProductDetails = [...currentProductDetails, ...data];
+
+    updatedProductDetails = [...new Set(updatedProductDetails)];
+
+    this.productDetails.next(updatedProductDetails)
   }
 
   getProductDetails(){

@@ -10,7 +10,7 @@ import { ProductDetails } from 'src/models/product.model';
 })
 export class CartComponent implements OnInit {
 
-  productsDetails!: [ProductDetails];
+  productsDetails!: ProductDetails[];
 
   quantity!:number
 
@@ -24,10 +24,7 @@ export class CartComponent implements OnInit {
       
       this.productsDetails = data;
 
-      if(data[0].name===''){
-
-        data.shift()
-      }
+      this.productsDetails = this.productsDetails.filter(product=>product.name!=='')
 
       this.quantity = data[0].count
 
