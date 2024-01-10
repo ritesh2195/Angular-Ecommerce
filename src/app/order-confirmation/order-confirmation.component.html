@@ -1,17 +1,21 @@
 <h4>🎉 Your Order is placed successfully</h4>
-<div class="order-status">
-  <div class="status ordered" ngClass="filledCircle">
-    <div *ngIf="true" class="tick">&#10003;</div> <!-- Show tick if isOrdered is true -->
-    <label class="status-label">Ordered</label>
-  </div>
+<mat-horizontal-stepper>
+  <!-- Step 1 -->
+  <mat-step label="Step 1">
+    <!-- Content for Step 1 -->
+    <!-- You can add any component or content here -->
+    <p>Ready to ship.</p>
+  </mat-step>
 
-  <div class="status ready-to-ship">
-    <div *ngIf="false" class="tick">&#10003;</div> <!-- Show tick if isReadyToShip is true -->
-    <label class="status-label mt-4">Processing</label>
-  </div>
+  <!-- Step 2 -->
+  <mat-step label="Step 2">
+    <!-- Content for Step 2 -->
+    <p>This is the content for Step 2.</p>
+  </mat-step>
 
-  <div class="status delivered">
-    <div *ngIf="false" class="tick">&#10003;</div> <!-- Show tick if isDelivered is true -->
-    <label class="status-label mt-4">Delivered</label>
-  </div>
-</div>
+  <!-- Step 3 -->
+  <mat-step label="Step 3">
+    <!-- Content for Step 3 -->
+    <p>This is the content for Step 3.</p>
+  </mat-step>
+</mat-horizontal-stepper>

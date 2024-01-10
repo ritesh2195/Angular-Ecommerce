@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { OverlayContentComponent } from './overlay-content/overlay-content.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { OrdersComponent } from './orders/orders.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { OrdersComponent } from './orders/orders.component';
     MatFormFieldModule,
     MatIconModule,
     MatDialogModule ,
+    MatStepperModule,
     CommonModule,
     AppRouterModule
   ],
