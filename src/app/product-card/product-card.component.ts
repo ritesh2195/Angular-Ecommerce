@@ -24,6 +24,8 @@ export class ProductCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productService.getAllProducts();
+
+    this.dataService.cartProductCounts = 0
   }
 
   clickAddToCart(product: any) {

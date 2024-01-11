@@ -21,18 +21,16 @@ export class AddressComponent implements OnInit {
 
   selectedAddressIndex: number = 0;
 
-  constructor(private router:Router,private dataService:DataService) {}
+  constructor(private router: Router, private dataService: DataService) {}
 
   ngOnInit(): void {}
 
   clickPlaceOrder() {
 
-    this.dataService.getProductDetails().subscribe(data=>{
+    this.router.navigate(['/order-confirmation']);
 
-      console.log(data)
-    })
+    this.dataService.sendData(0)
 
-    this.router.navigate(['/order-confirmation'])
-
+    //this.dataService.cartProductCounts = 0
   }
 }
