@@ -31,11 +31,6 @@ export class DataService {
 
     const currentProductDetails = this.productDetails.getValue();
 
-    if(currentProductDetails.length>0){
-
-      currentProductDetails.length = 0
-    }
-
     let updatedProductDetails = [...currentProductDetails, ...data];
 
     updatedProductDetails = [...new Set(updatedProductDetails)];
