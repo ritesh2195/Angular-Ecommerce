@@ -11,6 +11,8 @@ export class OrdersComponent implements OnInit {
 
   productOrder!: ProductDetails[];
 
+  date = new Date().toDateString()
+
   constructor(private productService:ProductsService) { }
 
   ngOnInit(): void {
@@ -18,6 +20,8 @@ export class OrdersComponent implements OnInit {
     this.productService.getOrder().subscribe(data=>{
 
       this.productOrder = data.filter(p=>p.name!=='')
+
+      console.log(this.date)
     })
   }
 
