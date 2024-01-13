@@ -33,22 +33,14 @@ export class ProductCardComponent implements OnInit {
 
     this.cartProductCounts = this.dataService.cartProductCounts;
 
-    if (this.isContainsProduct(product)) {
       this.productDetails.push({
         name: product.name,
         price: product.price,
         count: ++count,
         image: product.image,
       });
-    }
 
-    // this.productDetails.push({
-    //   name:product.name,
-    //   price:product.price,
-    //   count:this.cartProductCounts,
-    //   image:product.image
-
-    // })
+    this.productDetails.shift()
 
     this.dataService.sendProductDetails(this.productDetails);
   }
