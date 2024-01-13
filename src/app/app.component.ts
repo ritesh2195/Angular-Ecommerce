@@ -61,6 +61,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.authService.isUserLoggedIn = true;
 
     localStorage.removeItem('cookie');
+
+    localStorage.removeItem('userName');
   }
 
   onClickCart() {
