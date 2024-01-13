@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductDetails } from 'src/models/product.model';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-orders',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  productOrder!: ProductDetails[];
+
+  constructor(private productService:ProductsService) { }
 
   ngOnInit(): void {
+
+    this.productService.getOrder().subscribe(data=>{
+
+      this.productOrder = data.filter(p=>p.name!=='')
+    })
   }
 
 }
