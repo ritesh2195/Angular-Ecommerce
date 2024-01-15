@@ -39,6 +39,8 @@ export class AddressComponent implements OnInit {
 
     this.dataService.getProductDetails().subscribe((data) => {
       this.orderService.setOrder(data)
+
+      //this.dataService.resetProductDetails()
     });
   }
 }

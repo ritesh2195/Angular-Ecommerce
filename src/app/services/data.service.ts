@@ -67,4 +67,8 @@ export class DataService {
   
     return result;
   }
+
+  public resetProductDetails(): void {
+    this.productDetails.next([]);
+  }
 }
