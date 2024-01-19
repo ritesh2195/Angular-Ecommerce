@@ -40,7 +40,10 @@ export class ProductCardComponent implements OnInit {
         image: product.image,
       });
 
-    //this.productDetails.shift()
+      if(this.productDetails.length>1){
+        this.productDetails.shift()
+      }
+    
 
     this.dataService.sendProductDetails(this.productDetails);
   }

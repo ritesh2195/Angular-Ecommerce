@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ProductDetails } from 'src/models/product.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class DataService {
 
   private productDetails = new BehaviorSubject<Array<ProductDetails>>([{name:'',price:'',count:0,image:''}])
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   sendData(data:any){
 
